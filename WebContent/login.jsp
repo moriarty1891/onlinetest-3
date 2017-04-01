@@ -10,7 +10,7 @@
 	<table>
 		<tr>
 			<td><div style="padding-left: 100px"><img src="http://1.bp.blogspot.com/-S0haiBSIfZw/TlwxuyARFVI/AAAAAAAAAAs/Fhnvlnp0iiY/s1600/DSC_0208.jpg" width="250px" height="100px"/></div></td>
-			<td><p><i>Guru Nanak Dev Institute Of Technology </i><br>
+			<td><p><i><font >Guru Nanak Dev Institute Of Technology </i><br>
 					formerly Guru Nanak Dev CO-Ed Polytechnic<br>
                     DIRECTORATE OF TRAINING & TECHNICAL EDUCATION GOVT. OF NCT OF DELHI
 					
