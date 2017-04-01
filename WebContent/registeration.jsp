@@ -9,24 +9,28 @@
 <body>
 
 	<div style="padding-top: 100px">
-		<form action="${pageContext.request.contextPath}/register"
-			method="post">
+		<form action="${pageContext.request.contextPath}/register" method="post">
 			<table align="center">
+			<tr><td><% if(request.getParameter("m") != null) out.print("<font color = 'red'>" + request.getParameter("m")+ "</font>"); %></td></tr>
+			<tr>
+					<td><font color = "red">*</font>Username:</td>
+					<td><input type="text" name="username" autofocus required/></td>
+				</tr>
 				<tr>
 					<td><font color = "red">*</font>First Name:</td>
-					<td><input type="text" name="firstname" required/></td>
+					<td><input type="text" name="firstname" autofocus required/></td>
 				</tr>
 				<tr>
 					<td>Last Name:</td>
-					<td><input type="text" name="last name" required/></td>
+					<td><input type="text" name="lastname" required/></td>
 				</tr>
 				<tr>
 					<td>Father's Name:</td>
-					<td><input type="text" name="fathername" /></td>
+					<td><input type="text" name="fathername" required/></td>
 				</tr>
 				<tr>
 					<td>Mother's Name:</td>
-					<td><input type="text" name="mothername" /></td>
+					<td><input type="text" name="mothername" required/></td>
 				</tr>
 				<tr>
 					<td>DOB:</td>
@@ -105,50 +109,57 @@
 				</tr>
 				<tr>
 					<td>Roll number:</td>
-					<td><input type="text" name="roll" /></td>
+					<td><input type="text" name="roll" required/></td>
 				</tr>
 				<tr>
 					<td>Address:</td>
-					<td><input type="text" name="address" /></td>
+					<td><textarea rows="4" cols="20"></textarea></td>
 				</tr>
 				<tr>
 					<td>Course:</td>
-					<td><select>
-							<option value="Diploma engg.">Diploma engg.</option>
+					<td><select name="course">
+							<option value="diplomaEngg">Diploma engg.</option>
 							
 					</select></td>
 				</tr>
 				<tr>
 					<td>Session:</td>
-					<td><input type="text" name="session" /></td>
+					<td><input type="text" name="session" required/></td>
 				</tr>
 				<tr>
 					<td>Branch:</td>
 					<td><select name="branch">
-							<option value="Mechanical engg.">Mechanical engg.</option>
-							<option value="Civil Engg.">Civil Engg.</option>
-							<option value="Computer Engg.">Computer Engg.</option>
-							<option value="Electrical Engg.">Electrical Engg.</option>
-							<option value="Electronics Engg.">Electronics Engg.</option>
-							<option value="Polymer Engg.">Polymer Engg.</option>
-							<option value="Chemical  Engg.">Chemical  Engg.</option>
+							<option value="mechanical">Mechanical engg.</option>
+							<option value="civil">Civil Engg.</option>
+							<option value="computers">Computer Engg.</option>
+							<option value="electrical">Electrical Engg.</option>
+							<option value="electronics">Electronics Engg.</option>
+							<option value="polymer">Polymer Engg.</option>
+							<option value="chemical">Chemical  Engg.</option>
 					</select></td>
 			</tr>
 				<tr>
 					<td>Email id:</td>
-					<td><input type="text" name="email" /></td>
+					<td><input type="text" name="email"required /></td>
 				</tr>
 				<tr>
 					<td>Contact number:</td>
-					<td><input type="text" name="contact" /></td>
+					<td><input type="text" name="contact" required/></td>
 				</tr>
 				<tr>
+					<td>Gender:</td>
+					<td><select name="gender">
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+					</select></td>
+			</tr>
+				<tr>
 					<td>Password:</td>
-					<td><input type="password" name="password" /></td>
+					<td><input type="password" name="password" required /></td>
 				</tr>
 				<tr>
 					<td>Confirm Password:</td>
-					<td><input type="password" name="cpassword" /></td>
+					<td><input type="password" name="cpassword" required/></td>
 				</tr>
 				<tr>
 					<td align="right"><input type="submit" value="Register" /></td>

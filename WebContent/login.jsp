@@ -7,10 +7,15 @@
 <title>Login</title>
 </head>
 <body>
-	<table border="1">
+	<table>
 		<tr>
-			<td>Image</td>
-			<td>college name</td>
+			<td><div style="padding-left: 100px"><img src="http://1.bp.blogspot.com/-S0haiBSIfZw/TlwxuyARFVI/AAAAAAAAAAs/Fhnvlnp0iiY/s1600/DSC_0208.jpg" width="250px" height="100px"/></div></td>
+			<td><p><i>Guru Nanak Dev Institute Of Technology </i><br>
+					formerly Guru Nanak Dev CO-Ed Polytechnic<br>
+                    DIRECTORATE OF TRAINING & TECHNICAL EDUCATION GOVT. OF NCT OF DELHI
+					
+				</p>
+			</td>
 		</tr>
 	</table>
 	<hr>
@@ -28,7 +33,7 @@
 			</tr>
 			<tr><td><%if(request.getParameter("m") != null) out.print("<font color = 'red'>" + request.getParameter("m") +"</font>");%></td></tr>
 			<tr>
-				<td align="right"><input type="submit" value="Login" /></td><td><a href="registeration.jsp" >New User?</a></td>
+				<td align="right"><input type="submit" value="Login" class="formbutton" /></td><td><a href="registeration.jsp" >New User?</a></td>
 			</tr>
 		</table>
 	</form>

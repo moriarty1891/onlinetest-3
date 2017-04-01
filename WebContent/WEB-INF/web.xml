@@ -20,4 +20,20 @@
     <servlet-name>register</servlet-name>
     <servlet-class>com.onlinetest.servlets.RegisterServlet</servlet-class>
   </servlet>
+   <servlet-mapping>
+    <servlet-name>afterLogin</servlet-name>
+    <url-pattern>/afterLogin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>afterLogin</servlet-name>
+    <servlet-class>com.onlinetest.servlets.AfterLoginServlet</servlet-class>
+  </servlet>
+   <servlet-mapping>
+    <servlet-name>getQuestions</servlet-name>
+    <url-pattern>/getQuestions</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>getQuestions</servlet-name>
+    <servlet-class>com.onlinetest.servlets.GetQuestionsServlet</servlet-class>
+  </servlet>
 </web-app>

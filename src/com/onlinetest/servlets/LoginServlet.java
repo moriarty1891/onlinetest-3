@@ -12,6 +12,7 @@ import com.onlinetest.utils.JdbcUtil;
 
 public class LoginServlet extends HttpServlet {
 	enum Roles {ADMIN, STUDENT}
+	enum Status {PENDING, ACTIVE, BLOCK}
 	private static final long serialVersionUID = 1L;
 
 	public LoginServlet() {
@@ -19,11 +20,10 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("username:").append(request.getParameter("name")).append("\npassword:").append(request.getParameter("pwd"));
+		doPost(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-		response.getWriter().append("username:").append(request.getParameter("name")).append("\npassword:").append(request.getParameter("pwd"));
 		String username = request.getParameter("name");
 		String password = request.getParameter("pwd");
 
@@ -32,7 +32,10 @@ public class LoginServlet extends HttpServlet {
 			if(Roles.ADMIN.toString().equals(user.getRole())) {
 				System.out.println("Admin user");
 			} else {
+				request.getSession().setAttribute("user", user);
+				response.sendRedirect("selectSubject.jsp");
 				System.out.println("Student");
+				return;
 			}
 		} else {
 			System.out.println("User not exists in system. Show registration page");
