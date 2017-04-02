@@ -6,9 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Online Registration</title>
 </head>
-<body>
+<body background="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQVEZPiIvNpRFc7AZ_1vFuHPrdgJBLzmLMfYcwzPRvbjhXsrZ-n9Q">
+	<p align="center">Registration Form. </p>
 
-	<div style="padding-top: 100px">
+	<div style="padding-top: 5px">
 		<form action="${pageContext.request.contextPath}/register" method="post">
 			<table align="center">
 			<tr><td><% if(request.getParameter("m") != null) out.print("<font color = 'red'>" + request.getParameter("m")+ "</font>"); %></td></tr>
@@ -164,8 +165,10 @@
 				<tr>
 					<td align="right"><input type="submit" value="Register" /></td>
 				</tr>
+				
 			</table>
 		</form>
 	</div>
+		<p>Please Check all the details you submit above. </p>
 </body>
 </html>
