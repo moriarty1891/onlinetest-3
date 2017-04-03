@@ -6,8 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Online Registration</title>
 </head>
-<body background="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQVEZPiIvNpRFc7AZ_1vFuHPrdgJBLzmLMfYcwzPRvbjhXsrZ-n9Q">
-	<p align="center">Registration Form. </p>
+<body bgcolor="grey">
+	<p font size="5" align="center"><b>Registration Form.</b> </p>
 
 	<div style="padding-top: 5px">
 		<form action="${pageContext.request.contextPath}/register" method="post">

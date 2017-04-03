@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body bgcolor="grey">
 INdex page
 <% response.sendRedirect("login.jsp"); %>
 </body>
