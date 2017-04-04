@@ -1,14 +1,16 @@
 package com.onlinetest.utils;
 
-import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
-import com.onlinetest.models.QuestionPaper;
+import com.onlinetest.models.Question;
+import com.onlinetest.models.Test;
 import com.onlinetest.models.User;
 
 public class JdbcUtil {
@@ -121,26 +123,28 @@ public class JdbcUtil {
 		return null;
 	}
 
-	public static QuestionPaper findQuestionPaperBySemester(int parseInt) {
+	public static List<Question> findQuestionPaperBySemester(Test test) {
 		Statement stmt = null;
 		try{
 			conn = getConnection();
 			System.out.println("Getting records from the table...");
 			stmt = conn.createStatement();
-			String sql = "select * from question_paper where semester = " + parseInt;
-			System.out.println(sql);
+			String sql = "select * from question where semester = " + test.getSemester() + " and branch = '" + test.getBranch() + "' and subject = '"  + test.getSubject() + "'";
+			System.out.println(sql); 
 			ResultSet rs = stmt.executeQuery(sql);
 			System.out.println("Got records into the table...");
-			if(rs.next()){
-		         //Retrieve by column name
-				Blob blob = rs.getBlob("paper");
-				int paperid = rs.getInt("paperid");
-				QuestionPaper questionPaper = new QuestionPaper();
-				questionPaper.setPaper(new String(blob.getBytes(1l, (int) blob.length())).getBytes());
-				questionPaper.setPaperId(paperid);
-				questionPaper.setSemester(parseInt);
-				return questionPaper;
-		      }
+			List<Question> questions = new ArrayList<>();
+			while(rs.next()) {
+				Question question = new Question();
+				question.setQuestion(rs.getString("question"));
+				question.setOption1(rs.getString("option1"));
+				question.setOption2(rs.getString("option2"));
+				question.setOption3(rs.getString("option3"));
+				question.setOption4(rs.getString("option4"));
+				question.setId(rs.getInt("id"));
+				questions.add(question);
+			}
+			return questions;
 		}catch(SQLException se){
 			se.printStackTrace();
 		}catch(Exception e){

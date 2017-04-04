@@ -36,4 +36,12 @@
     <servlet-name>getQuestions</servlet-name>
     <servlet-class>com.onlinetest.servlets.GetQuestionsServlet</servlet-class>
   </servlet>
+   <servlet-mapping>
+    <servlet-name>submitTest</servlet-name>
+    <url-pattern>/submitTest</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>submitTest</servlet-name>
+    <servlet-class>com.onlinetest.servlets.SubmitTestServlet</servlet-class>
+  </servlet>
 </web-app>

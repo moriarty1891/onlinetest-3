@@ -131,14 +131,12 @@
 					<td>Branch:</td>
 					<td><select name="branch">
 							<option value="mechanical">Mechanical engg.</option>
-							<option value="civil">Civil Engg.</option>
 							<option value="computers">Computer Engg.</option>
 							<option value="electrical">Electrical Engg.</option>
 							<option value="electronics">Electronics Engg.</option>
-							<option value="polymer">Polymer Engg.</option>
 							<option value="chemical">Chemical  Engg.</option>
 					</select></td>
-			</tr>
+				</tr>
 				<tr>
 					<td>Email id:</td>
 					<td><input type="text" name="email"required /></td>
